@@ -5,6 +5,6 @@ function random(name) {
     alert('Не строка');
   }
   console.log(name.trim());
-  console.log( name.length > 30 ? name.slice(0, 30) + '...' : name);  // Работает так, как надо.
+  console.log(name.length > 30 ? name.slice(0, 30) + '...' : name);  // Работает так, как надо.
 }
-random(' MadMax ');   // Пробелы на проверку trim.
+random(prompt(''));   // Пробелы на проверку trim.
