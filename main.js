@@ -1,10 +1,10 @@
 'use strict';
 
 function random(name) {
-  if(typeof name !== 'string') {
+  if(typeof name !== 'string') {  // Работает как надо, вместое MadMax ставим цифры - срабатывает алерт.
     alert('Не строка');
   }
   console.log(name.trim());
-  return name.length > 30 ? name.slice(0, 30) + '...' : name;
+  console.log( name.length > 30 ? name.slice(0, 30) + '...' : name);  // Работает так, как надо.
 }
-random('MadMax');
+random(' MadMax ');   // Пробелы на проверку trim.
