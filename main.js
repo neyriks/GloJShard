@@ -7,4 +7,17 @@ function random(name) {
   console.log(name.trim());
   console.log(name.length > 30 ? name.slice(0, 30) + '...' : name);  // Работает так, как надо.
 }
+<<<<<<< Updated upstream
 random(prompt(''));   // Пробелы на проверку trim.
+=======
+random('Madmax');
+random(123);   // Пробелы на проверку trim.
+
+
+// let array = ['227', '258', '411', '443', '559', '661', '260'];
+// array.forEach((number) => {                                   // Использовал стрелочную функцию.
+//     if (number.startsWith('2') || number.startsWith('4')) {   // Указываем с какой цифры стартуем. (отвечаем startsWith)
+//       console.log(number);                                    // Выводим цифры в консоль.
+//     }
+//   });
+>>>>>>> Stashed changes
