@@ -30,3 +30,14 @@ function declOfNum(number, titles) {
 }
 let datastr = (`Сегодня ${day}, ${date} ${month} ${year} года, ${hours} ${declOfNum(hours, ['час', 'часа', 'часов'])} ${mins} минут ${secs} секунд`);
 console.log(datastr);
+
+// Вывод кажду секунду.
+
+    setInterval(() => {
+    let date = new Date();
+        let newDate = (`Сегодня ${day}, ${date} ${month} ${year} года, ${hours} ${declOfNum(hours, ['час', 'часа', 'часов'])} ${mins} минут ${secs} секунд`);
+        let block = document.querySelector('.block');
+        let newTime = document.createElement('p');
+        newTime.textContent = newDate;
+        block.appendChild(newTime);
+    }, 1000);
