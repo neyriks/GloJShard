@@ -35,7 +35,7 @@ console.log(datastr);
 
     setInterval(() => {
     let date = new Date();
-        let newDate = (`Сегодня ${day}, ${date} ${month} ${year} года, ${hours} ${declOfNum(hours, ['час', 'часа', 'часов'])} ${mins} минут ${secs} секунд`);
+        let newDate = (`${(date.getDate())} ${month} ${date.getFullYear()} - ${(date.getHours())}:${(date.getMinutes())}:${(date.getSeconds())}`);
         let block = document.querySelector('.block');
         let newTime = document.createElement('p');
         newTime.textContent = newDate;
