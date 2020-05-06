@@ -1,7 +1,7 @@
 'use strict';
 let date = new Date().toLocaleString('ru');
 console.log(date);
-
+let newTime = document.createElement('p');
 let dayarray = new Array("воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"),
     montharray = new Array("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"),
     ndata = new Date(),
@@ -37,7 +37,6 @@ console.log(datastr);
     let date = new Date();
         let newDate = (`${(date.getDate())} ${month} ${date.getFullYear()} - ${(date.getHours())}:${(date.getMinutes())}:${(date.getSeconds())}`);
         let block = document.querySelector('.block');
-        let newTime = document.createElement('p');
         newTime.textContent = newDate;
         block.appendChild(newTime);
     }, 1000);
