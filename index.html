@@ -434,11 +434,16 @@
 			},
         });
 		valid.init();
+<<<<<<< Updated upstream
 		const valid = new Validator ({
+=======
+		const valid2 = new Validator ({
+>>>>>>> Stashed changes
             selector: '#form2',
             pattern: {
             },
             method: {
+<<<<<<< Updated upstream
 				'form1-name': [
 					['notEmpty'],
 					['pattern', 'name'],
@@ -455,10 +460,33 @@
         });
 		valid.init();
 		const valid = new Validator ({
+=======
+				'form2-name': [
+					['notEmpty'],
+					['pattern', 'name'],
+				],
+				'form2-phone': [
+					['notEmpty'],
+					['pattern', 'phone'],
+				],
+				'form2-email': [
+					['notEmpty'],
+					['pattern', 'email'],
+				],
+				'form2-message': [
+					['notEmpty'],
+					['pattern', 'message']
+				]
+			},
+        });
+		valid2.init();
+		const valid3 = new Validator ({
+>>>>>>> Stashed changes
             selector: '#form3',
             pattern: {
             },
             method: {
+<<<<<<< Updated upstream
 				'form1-name': [
 					['notEmpty'],
 					['pattern', 'name'],
@@ -468,12 +496,27 @@
 					['pattern', 'phone'],
 				],
 				'form1-email': [
+=======
+				'form3-name': [
+					['notEmpty'],
+					['pattern', 'name'],
+				],
+				'form3-phone': [
+					['notEmpty'],
+					['pattern', 'phone'],
+				],
+				'form3-email': [
+>>>>>>> Stashed changes
 					['notEmpty'],
 					['pattern', 'email'],
 				]
 			},
         });
+<<<<<<< Updated upstream
 		valid.init();
+=======
+		valid3.init();
+>>>>>>> Stashed changes
 </script>
 <script src="./script/script.js"></script>
 
