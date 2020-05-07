@@ -414,7 +414,7 @@
 </div>
 <script src="./script/validator.js"></script>
 <script>
-	const valid = new Validator({
+	const valid = new Validator({ // Валидация в шапке
 		selector: '#form1',
 		pattern: {
 		},
@@ -434,7 +434,7 @@
 		},
 	});
 	valid.init();	
-	const valid2 = new Validator({
+	const valid2 = new Validator({   // валидация формы в футере
 		selector: '#form2',
 		pattern: {
 		},
@@ -443,22 +443,22 @@
 				['notEmpty'],
 				['pattern', 'name'],
 			],
-			'form2-message': [
+			'form2-email': [
 				['notEmpty'],
-				['pattern', 'message'],
+				['pattern', 'email'],
 			],
 			'form2-phone': [
 				['notEmpty'],
 				['pattern', 'phone'],
-			],
-			'form2-email': [
+			],		
+			'form2-message': [
 				['notEmpty'],
-				['pattern', 'email'],
+				['pattern', 'message'],
 			]
 		},
 	});
 	valid2.init();
-	const valid3 = new Validator({
+	const valid3 = new Validator({ // Валидация попап
 		selector: '#form3',
 		pattern: {
 		},

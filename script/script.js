@@ -1,5 +1,5 @@
 'use strict';
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     // Timer
     function countTimer(deadline) {
         const timerHours = document.querySelector('#timer-hours'),
@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }, 1000);
     }
-    countTimer('30 april 2020');
+    countTimer('30 may 2020');
     // Menu
     const toogleMenu = () => {
         const btnMenu = document.querySelector('.menu'),
@@ -126,7 +126,7 @@ window.addEventListener('DOMContentLoaded', () => {
         popupClose.addEventListener('click', () => {
             popup.style.display = 'none';
         });
-        window.addEventListener('click', e => {
+        document.addEventListener('click', e => {
             if (e.target === popup) {
                 popup.style.display = 'none';
             }
@@ -309,4 +309,57 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     };
     calc(100);
+
+    //send-ajax-form
+    const sendForm = () => {
+        const errorMessage = 'Что-то пошло не так',
+            loadMessage = 'Загрузка...',
+            successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
+        const forms = document.querySelectorAll('form');
+        const statusMessage = document.createElement('div');
+        statusMessage.style.cssText = 'font-size: 2rem; color: #fff;';
+        const postData = body => fetch('./server.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        });
+        const success = () => {
+            statusMessage.textContent = successMessage;
+        };
+        const error = () => {
+            statusMessage.textContent = errorMessage;
+            statusMessage.style.cssText = `font-size: 2rem;
+            color: red; `;
+        };
+        forms.forEach(form => {
+            form.addEventListener('submit', event => {
+                event.preventDefault();
+                form.appendChild(statusMessage);
+                statusMessage.textContent = loadMessage;
+                const formData = new FormData(form);
+                const body = {};
+                formData.forEach((val, key) => {
+                    body[key] = val;
+                });
+                postData(body).then(success, response => {
+                    if (response.status !== 200) {
+                        throw new Error('Status network not 200');
+                    }
+                }).catch(error);
+            });
+            // Валидация формы.
+            form.addEventListener('input', event => {
+                const target = event.target;
+                if (target.name === 'user_phone') {
+                    target.value = target.value.replace(/[^\\+\d]/g, '');
+                }
+                if (target.name === 'user_name' || target.name === 'user_message') {
+                    target.value = target.value.replace(/[^а-я ]/gi, '');
+                }
+            });
+        });
+    };
+    sendForm();
 });
