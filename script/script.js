@@ -311,7 +311,6 @@ document.addEventListener('DOMContentLoaded', () => {
     //send-ajax-form
     const sendForm = () => {
         const errorMessage = 'Что-то пошло не так',
-            loadMessage = 'Загрузка...',
             successMessage = 'Спасибо! Мы скоро с вами свяжемся!',
             forms = document.querySelectorAll('form'),
             statusMessage = document.createElement('div');
@@ -536,25 +535,21 @@ position: fixed;
                 }, 5000);
             }
         };
-        const preLoaderDiv = document.querySelector('.myContainer');
         const success = () => {
             statusMessage.textContent = successMessage;
             removeStatusMessage();
-            preLoaderDiv.remove();
         };
         const error = () => {
             statusMessage.textContent = errorMessage;
             statusMessage.style.cssText = `font-size: 2rem;
             color: red; `;
             removeStatusMessage();
-            preLoaderDiv.remove();
         };
         forms.forEach(form => {
             form.addEventListener('submit', event => {
                 event.preventDefault();
                 form.appendChild(statusMessage);
-                statusMessage.textContent = loadMessage;
-                document.body.insertAdjacentHTML(`beforeend`, preLoader());
+                statusMessage.insertAdjacentHTML(`beforeend`, preLoader());
                 const formData = new FormData(form);
                 const body = {};
                 formData.forEach((val, key) => {
@@ -565,6 +560,7 @@ position: fixed;
                         throw new Error('Status network not 200');
                     }
                 }).catch(error);
+                form.reset();
             });
             // Валидация формы.
             form.addEventListener('input', event => {
