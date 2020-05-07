@@ -414,117 +414,66 @@
 </div>
 <script src="./script/validator.js"></script>
 <script>
-	const valid = new Validator ({
-            selector: '#form1',
-            pattern: {
-            },
-            method: {
-				'form1-name': [
-					['notEmpty'],
-					['pattern', 'name'],
-				],
-				'form1-phone': [
-					['notEmpty'],
-					['pattern', 'phone'],
-				],
-				'form1-email': [
-					['notEmpty'],
-					['pattern', 'email'],
-				]
-			},
-        });
-		valid.init();
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-		const valid = new Validator ({
-=======
-		const valid2 = new Validator ({
->>>>>>> Stashed changes
-=======
-		const valid2 = new Validator ({
->>>>>>> bf7cd26f9ede8f8c2bb7d246ec7874eb155e4469
-            selector: '#form2',
-            pattern: {
-            },
-            method: {
-<<<<<<< Updated upstream
-				'form1-name': [
-					['notEmpty'],
-					['pattern', 'name'],
-				],
-				'form1-phone': [
-					['notEmpty'],
-					['pattern', 'phone'],
-				],
-				'form1-email': [
-					['notEmpty'],
-					['pattern', 'email'],
-				]
-			},
-        });
-		valid.init();
-<<<<<<< HEAD
-		const valid = new Validator ({
-=======
-				'form2-name': [
-					['notEmpty'],
-					['pattern', 'name'],
-				],
-				'form2-phone': [
-					['notEmpty'],
-					['pattern', 'phone'],
-				],
-				'form2-email': [
-					['notEmpty'],
-					['pattern', 'email'],
-				],
-				'form2-message': [
-					['notEmpty'],
-					['pattern', 'message']
-				]
-			},
-        });
-		valid2.init();
-		const valid3 = new Validator ({
->>>>>>> Stashed changes
-=======
-		const valid3 = new Validator ({
->>>>>>> bf7cd26f9ede8f8c2bb7d246ec7874eb155e4469
-            selector: '#form3',
-            pattern: {
-            },
-            method: {
-<<<<<<< Updated upstream
-				'form1-name': [
-					['notEmpty'],
-					['pattern', 'name'],
-				],
-				'form1-phone': [
-					['notEmpty'],
-					['pattern', 'phone'],
-				],
-				'form1-email': [
-=======
-				'form3-name': [
-					['notEmpty'],
-					['pattern', 'name'],
-				],
-				'form3-phone': [
-					['notEmpty'],
-					['pattern', 'phone'],
-				],
-				'form3-email': [
->>>>>>> Stashed changes
-					['notEmpty'],
-					['pattern', 'email'],
-				]
-			},
-        });
-<<<<<<< Updated upstream
-		valid.init();
-=======
-		valid3.init();
->>>>>>> Stashed changes
+	const valid = new Validator({
+		selector: '#form1',
+		pattern: {
+		},
+		method: {			
+			'form1-name': [
+				['notEmpty'],
+				['pattern', 'name'],
+			],
+			'form1-phone': [
+				['notEmpty'],
+				['pattern', 'phone'],
+			],
+			'form1-email': [
+				['notEmpty'],
+				['pattern', 'email'],
+			]
+		},
+	});
+	valid.init();	
+	const valid2 = new Validator({
+		selector: '#form2',
+		pattern: {
+		},
+		method: {
+			'form2-name': [
+				['notEmpty'],
+				['pattern', 'name'],
+			],
+			'form2-message': [
+				['notEmpty'],
+				['pattern', 'message'],
+			],
+			'form2-phone': [
+				['notEmpty'],
+				['pattern', 'phone'],
+			],
+			'form2-email': [
+				['notEmpty'],
+				['pattern', 'email'],
+			]
+		},
+	});
+	valid2.init();
+	const valid3 = new Validator({
+		selector: '#form3',
+		pattern: {
+		},
+		method: {
+			'form3-phone': [
+				['notEmpty'],
+				['pattern', 'phone'],
+			],
+			'form3-email': [
+				['notEmpty'],
+				['pattern', 'email'],
+			]
+		},
+	});
+	valid3.init();
 </script>
 <script src="./script/script.js"></script>
 
